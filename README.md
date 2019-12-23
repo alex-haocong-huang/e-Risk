@@ -1,5 +1,55 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Key Assumptions
+* IE11 is the standard Browser in HSBC
+* There will be a huge data of stock trades
+* Internationalization is out of scope
+
+## Key Decisions
+* Only Support IE11
+* Don't enable Progressive Web App (PWA) as IE11 doesn't support
+* Support pagination of stock trades list as the data will be huge
+* At the moment, don't include router and redux to make the app simple
+* Add Ant Design of React to simpify development of datatable
+* Add axios for http as IE11 doesn't support Fetch 
+## Files/Folders Structure
+
+### components
+All your Presentational components go here. These are the simple stateless ones that just take props.
+Components defined in the components folder, are global and can be used anywhere in your application.
+
+### scenes
+A scene is a page of your application. These are the stateful ones, and the ones that make the API calls.
+
+### services
+service is the place where you will define the core business logic of your application. 
+
+## Security
+
+### XSS (cross-site-scripting) attacks.
+By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. 
+
+### XSRF (Cross-site request forgery)
+In a common anti-XSRF technique, the application server sends a randomly generated authentication token in a cookie. The client code reads the cookie and adds a custom request header with the token in all subsequent requests. The server compares the received cookie value to the request header value and rejects the request if the values are missing or don't match.
+However, as there is no backend integration in the demo, anti-XSRF technique will be applyed in future.
+
+## Code Convention
+It requires 0 warnning on the EsLint report. All Eslint issues should be resolved before release.
+
+## Third Party Libraries
+* Ant Design of React
+* testing-library
+* axios
+
+## Unit Test
+### Coverage Reporting
+`yarn test -- --coverage `
+Run abolve script (note extra -- in the middle) to include a coverage report
+
+### Continuous Integration
+`CI=true npm run build`
+Assume CI is running on linux base docker
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -27,21 +77,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 

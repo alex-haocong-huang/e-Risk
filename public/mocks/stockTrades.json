@@ -1,0 +1,29 @@
+{
+  "dataSource": [
+    {
+      "key": 1,
+      "Company": "Google",
+      "Total": "900"
+    },
+    {
+      "key": 2,
+      "Company": "Microsoft",
+      "Total": 100
+    },
+    {
+      "key": 3,
+      "Company": "Amazon",
+      "Total": -150
+    },
+    {
+      "key": 4,
+      "Company": "DropCar, Inc.",
+      "Total": "900"
+    },
+    {
+      "key": 5,
+      "Company": "Cemtrex, Inc.",
+      "Total": 100
+    }
+  ]
+}
