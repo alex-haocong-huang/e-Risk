@@ -1,8 +1,8 @@
 /*
  * @Author: alex.huang 
  * @Date: 2019-12-23 15:13:27 
- * @Last Modified by:   alex.huang 
- * @Last Modified time: 2019-12-23 15:13:27 
+ * @Last Modified by: alex.huang
+ * @Last Modified time: 2019-12-23 16:54:16
  */
 import { Form, InputNumber, Button, notification, Input } from "antd";
 import React from "react";
@@ -113,7 +113,7 @@ class TradeForm extends React.Component {
             })(
               <InputNumber
                 className="quantity-input"
-                precision={10}
+                precision={3}
                 type="text"
                 placeholder="Quantities"
               />
