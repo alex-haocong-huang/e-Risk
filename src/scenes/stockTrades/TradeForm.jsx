@@ -85,9 +85,9 @@ class TradeForm extends React.Component {
     } = this.props.form;
 
     // Only show error after a field is touched.
-    const companyError = isFieldTouched("Company") && getFieldError("Company");
+    const companyError = isFieldTouched("company") && getFieldError("company");
     const quantitiesError =
-      isFieldTouched("Quantities") && getFieldError("Quantities");
+      isFieldTouched("quantities") && getFieldError("quantities");
     return (
       <div className="trade-form">
         <h1>Add new trade</h1>
@@ -96,7 +96,7 @@ class TradeForm extends React.Component {
             validateStatus={companyError ? "error" : ""}
             help={companyError || ""}
           >
-            {getFieldDecorator("Company", {
+            {getFieldDecorator("company", {
               rules: [
                 {
                   required: true,
@@ -132,7 +132,7 @@ class TradeForm extends React.Component {
             validateStatus={quantitiesError ? "error" : ""}
             help={quantitiesError || ""}
           >
-            {getFieldDecorator("Quantities", {
+            {getFieldDecorator("quantities", {
               rules: [
                 {
                   required: true,

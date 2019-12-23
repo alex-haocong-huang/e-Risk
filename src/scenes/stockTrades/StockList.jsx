@@ -19,6 +19,7 @@ class StockList extends React.Component {
     return (
       <div>
         <Table
+          rowKey="key"
           size="middle"
           data-testid="trades-list"
           rowClassName={(record, index) => {

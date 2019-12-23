@@ -15,26 +15,13 @@ class StockTrades extends React.Component {
 
   async componentDidMount() {
     const service = new StockTradeService();
-    const dataSource = await service.getStockTrades();
+    const dataSource = await service.getStockNetQuantities();
     this.setState({ dataSource: dataSource });
   }
 
   addNewTrade = newTrade => {
-    //copy new array rather than to change exsiting one
-    let dataSource = this.state.dataSource.slice();
-    let trade = dataSource.find(trade => {
-      return trade.Company === newTrade.Company;
-    });
-    if (trade) {
-      trade.Total += parseInt(newTrade.Quantities);
-    } else {
-      const key = dataSource.length + 1;
-      dataSource.push({
-        key: key,
-        Company: newTrade.Company,
-        Total: parseInt(newTrade.Quantities)
-      });
-    }
+    const service = new StockTradeService();
+    const dataSource = service.addNewTrade(this.state.dataSource,newTrade);
     this.setState({ dataSource: dataSource });
   };
 
@@ -44,15 +31,15 @@ class StockTrades extends React.Component {
     const columns = [
       {
         title: "Company",
-        dataIndex: "Company",
-        sorter: (a, b) => a.Company.localeCompare(b.Company),
+        dataIndex: "company",
+        sorter: (a, b) => a.company.localeCompare(b.company),
         defaultSortOrder: "descend",
-        key: "Company"
+        key: "company"
       },
       {
         title: "Total",
-        dataIndex: "Total",
-        key: "Total"
+        dataIndex: "total",
+        key: "total"
       }
     ];
 
