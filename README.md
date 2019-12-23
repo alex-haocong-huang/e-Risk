@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * IE11 is the standard Browser in HSBC
 * There will be a huge data of stock trades
 * Internationalization is out of scope
+* Quantities max number is 10000000000, min number is -10000000000, precision is 2
+* Length of company name is unlimited 
+* Company name is unique
+* Today's trades list is sorted by data sequence
+* There is no requirement to show the history of stock trades. Stock trades will not be record in database
+* Calculation should be process on backend server side, otherwise it may have performance issue. But there is not backend, Calculation should be process on front end
+* API design and API implementation are out of scope
 
 ## Key Decisions
 * Only Support IE11
@@ -12,6 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * At the moment, don't include router and redux to make the app simple
 * Add Ant Design of React to simpify development of datatable
 * Add axios for http as IE11 doesn't support Fetch 
+
 ## Files/Folders Structure
 
 ### components

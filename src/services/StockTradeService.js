@@ -1,3 +1,9 @@
+/*
+ * @Author: alex.huang 
+ * @Date: 2019-12-23 15:13:37 
+ * @Last Modified by:   alex.huang 
+ * @Last Modified time: 2019-12-23 15:13:37 
+ */
 import axios from "axios";
 
 export default class StockTradeService {
@@ -42,7 +48,7 @@ export default class StockTradeService {
         //assume Company is unique identifier
         let existingTrade = netQuantities.get(trade.company);
         if (existingTrade) {
-          existingTrade.total += trade.quantities;
+          existingTrade.total = parseFloat(existingTrade.total) + parseFloat(trade.quantities);
         } else {
           netQuantities.set(trade.company, {
             key: trade.company,

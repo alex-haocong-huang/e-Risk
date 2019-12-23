@@ -1,3 +1,9 @@
+/*
+ * @Author: alex.huang 
+ * @Date: 2019-12-23 15:14:07 
+ * @Last Modified by:   alex.huang 
+ * @Last Modified time: 2019-12-23 15:14:07 
+ */
 import React from "react";
 import StockList from "./StockList";
 import TradeForm from "./TradeForm";
@@ -19,6 +25,7 @@ class StockTrades extends React.Component {
     this.setState({ dataSource: dataSource });
   }
 
+  /** add New Trade callback */
   addNewTrade = newTrade => {
     const service = new StockTradeService();
     const dataSource = service.addNewTrade(this.state.dataSource,newTrade);
@@ -33,7 +40,6 @@ class StockTrades extends React.Component {
         title: "Company",
         dataIndex: "company",
         sorter: (a, b) => a.company.localeCompare(b.company),
-        defaultSortOrder: "descend",
         key: "company"
       },
       {
