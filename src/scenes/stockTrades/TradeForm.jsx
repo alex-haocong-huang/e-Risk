@@ -2,7 +2,7 @@
  * @Author: alex.huang 
  * @Date: 2019-12-23 15:13:27 
  * @Last Modified by: alex.huang
- * @Last Modified time: 2019-12-23 16:54:16
+ * @Last Modified time: 2019-12-24 11:53:33
  */
 import { Form, InputNumber, Button, notification, Input } from "antd";
 import React from "react";
@@ -56,7 +56,7 @@ class TradeForm extends React.Component {
     if (val === 0) {
       callback("0 is not allowed.");
     } else if (!val) {
-      callback("Please input quantities.");
+      callback("Please input quantity.");
     } else if (!parseFloat(val)) {
       callback("Only number is allowed.");
     } else if (parseFloat(val) > 10000000000) {
@@ -115,7 +115,7 @@ class TradeForm extends React.Component {
                 className="quantity-input"
                 precision={3}
                 type="text"
-                placeholder="Quantities"
+                placeholder="Quantity"
               />
             )}
           </Form.Item>
